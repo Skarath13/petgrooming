@@ -1,0 +1,18 @@
+name = "pawgrooming"
+main = "worker.js"
+compatibility_date = "2025-05-30"
+account_id = "b95be8604c4d3512b9fe28abe92affad"
+
+# Static assets configuration
+[assets]
+directory = "./clean_site"
+
+# Environment variables
+[env.production]
+# Add any environment variables needed
+
+# Custom domain configuration (when ready)
+# routes = [
+#   "local-pet-grooming.com/*",
+#   "www.local-pet-grooming.com/*"
+# ]

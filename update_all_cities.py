@@ -29,7 +29,30 @@ def create_city_page_template():
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Mobile Pet Grooming {{CITY_NAME}} • {{BUSINESS_COUNT}} Top Groomers • PawGrooming</title>
     <meta name="description" content="Discover the best mobile pet grooming services in {{CITY_NAME}}. {{BUSINESS_COUNT}} verified groomers with authentic reviews and convenient at-home service.">
-    <link rel="canonical" href="https://local-pet-grooming.com/{{CITY_SLUG}}">
+    <link rel="canonical" href="https://findmobilepetgrooming.com/{{CITY_SLUG}}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://findmobilepetgrooming.com/{{CITY_SLUG}}">
+    <meta property="og:title" content="Mobile Pet Grooming {{CITY_NAME}} • {{BUSINESS_COUNT}} Top Groomers">
+    <meta property="og:description" content="Find the best mobile pet groomers in {{CITY_NAME}}. {{BUSINESS_COUNT}} verified professionals with authentic reviews and convenient at-home service.">
+    <meta property="og:image" content="https://findmobilepetgrooming.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PawGrooming">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://findmobilepetgrooming.com/{{CITY_SLUG}}">
+    <meta name="twitter:title" content="Mobile Pet Grooming {{CITY_NAME}} • {{BUSINESS_COUNT}} Top Groomers">
+    <meta name="twitter:description" content="Find the best mobile pet groomers in {{CITY_NAME}}. {{BUSINESS_COUNT}} verified professionals with authentic reviews and convenient at-home service.">
+    <meta name="twitter:image" content="https://findmobilepetgrooming.com/og-image.png">
     
     <!-- PWA Mobile Optimizations -->
     <meta name="theme-color" content="#a8c090">
@@ -43,8 +66,6 @@ def create_city_page_template():
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Touch Icon -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
     
     {{SCHEMA_MARKUP}}
     
@@ -475,6 +496,24 @@ def create_city_page_template():
         .footer-links a:focus {
             color: var(--soft-pink);
             text-decoration: underline;
+        }
+        
+        /* Desktop-specific optimizations */
+        @media (min-width: 769px) {
+            .contact-link {
+                flex: 0 1 auto;
+                min-width: 120px;
+                max-width: none;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                gap: 8px;
+            }
+            
+            .business-contact {
+                gap: 12px;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
         }
         
         /* Mobile-specific optimizations */
