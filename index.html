@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawGrooming • Find Mobile Pet Groomers Near You</title>
+    <meta name="description" content="Discover mobile pet grooming services in your city. 129+ verified groomers across 18 cities with authentic reviews and convenient home service.">
+    <link rel="canonical" href="https://local-pet-grooming.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Organization markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PawGrooming",
+        "url": "https://local-pet-grooming.com",
+        "description": "Directory of mobile pet grooming services across the United States",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.5,
+            "reviewCount": 129
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Ghibli-inspired palette */
+            --sage-green: #a8c090;
+            --soft-pink: #f4c2c2;
+            --warm-cream: #fff8dc;
+            --earth-brown: #8b7355;
+            --sky-blue: #87ceeb;
+            --lavender: #e6e6fa;
+            --sunset-orange: #ffb366;
+            --deep-forest: #2d5016;
+            --warm-white: #fafafa;
+            --charcoal: #2c2c2c;
+            
+            /* Spacing & borders */
+            --border-radius: 24px;
+            --border-radius-sm: 16px;
+            --shadow-soft: 0 8px 32px rgba(0,0,0,0.08);
+            --shadow-hover: 0 12px 48px rgba(0,0,0,0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--lavender) 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--sky-blue) 100%);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🐕🦴🧼✨';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+            transform: rotate(-15deg);
+        }
+        
+        .hero::after {
+            content: '🐾';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            font-weight: 400;
+            margin-bottom: 8px;
+            opacity: 0.95;
+        }
+        
+        .hero-description {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--sunset-orange) 100%);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: var(--shadow-soft);
+            color: white;
+        }
+        
+        .stats-title {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
+            display: block;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        
+        /* City Grid */
+        .cities-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--deep-forest);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '🐾';
+            position: absolute;
+            top: -8px;
+            right: calc(50% - 60px);
+            font-size: 1.2rem;
+            opacity: 0.6;
+        }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        
+        .city-card {
+            background: var(--warm-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .city-header {
+            background: linear-gradient(135deg, var(--earth-brown) 0%, var(--sage-green) 100%);
+            color: white;
+            padding: 24px;
+            position: relative;
+        }
+        
+        .city-header::after {
+            content: '🏙️';
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        .city-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+        }
+        
+        .city-count {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+        
+        .city-body {
+            padding: 24px;
+        }
+        
+        .city-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            color: var(--earth-brown);
+        }
+        
+        .rating-stars {
+            color: #ffd700;
+        }
+        
+        .city-cta {
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--sky-blue) 100%);
+            color: white;
+            padding: 14px 24px;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(168, 192, 144, 0.3);
+        }
+        
+        .city-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(168, 192, 144, 0.4);
+        }
+        
+        /* Features Section */
+        .features {
+            background: var(--warm-white);
+            border-radius: var(--border-radius);
+            padding: 48px 32px;
+            margin: 60px 0;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 24px;
+            border-radius: var(--border-radius-sm);
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--warm-cream) 100%);
+            transition: var(--transition);
+        }
+        
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--deep-forest);
+            margin-bottom: 12px;
+        }
+        
+        .feature-text {
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--deep-forest) 0%, var(--earth-brown) 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 20px;
+            margin-top: 60px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        .footer-links {
+            margin: 24px 0;
+        }
+        
+        .footer-links a {
+            color: var(--sky-blue);
+            text-decoration: none;
+            margin: 0 16px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--soft-pink);
+            text-decoration: underline;
+        }
+        
+        .footer-copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 16px;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero {
+                padding: 60px 16px 40px;
+                margin-bottom: 24px;
+            }
+            
+            .cities-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-links a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .city-header::after {
+                display: none;
+            }
+            
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+            
+            .section-title::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1 class="hero-title">🐕 PawGrooming</h1>
+            <p class="hero-subtitle">Professional Mobile Pet Groomers</p>
+            <p class="hero-description">Stress-free grooming that comes to your home</p>
+        </div>
+        
+        <section class="stats">
+            <h2 class="stats-title">Trusted by Pet Parents Everywhere</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">129+</span>
+                    <span class="stat-label">Groomers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Cities</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.5⭐</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Verified</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cities-section">
+            <h2 class="section-title">Find Groomers in Your City</h2>
+            <div class="cities-grid">
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Princeton, TX</h3>
+                        <p class="city-count">4 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.7 average • Verified addresses</span>
+                        </div>
+                        <a href="/princeton" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Plano, TX</h3>
+                        <p class="city-count">7 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.8 average • Verified addresses</span>
+                        </div>
+                        <a href="/plano" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Austin, TX</h3>
+                        <p class="city-count">13 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐</span>
+                            <span>4.3 average • Verified addresses</span>
+                        </div>
+                        <a href="/austin" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Scottsdale, AZ</h3>
+                        <p class="city-count">4 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.8 average • Verified addresses</span>
+                        </div>
+                        <a href="/scottsdale" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Phoenix, AZ</h3>
+                        <p class="city-count">5 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐</span>
+                            <span>3.6 average • Verified addresses</span>
+                        </div>
+                        <a href="/phoenix" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Raleigh, NC</h3>
+                        <p class="city-count">5 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.6 average • Verified addresses</span>
+                        </div>
+                        <a href="/raleigh" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Charlotte, NC</h3>
+                        <p class="city-count">3 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.7 average • Verified addresses</span>
+                        </div>
+                        <a href="/charlotte" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Denver, CO</h3>
+                        <p class="city-count">6 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.9 average • Verified addresses</span>
+                        </div>
+                        <a href="/denver" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Tampa, FL</h3>
+                        <p class="city-count">12 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.7 average • Verified addresses</span>
+                        </div>
+                        <a href="/tampa" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Miami, FL</h3>
+                        <p class="city-count">17 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.8 average • Verified addresses</span>
+                        </div>
+                        <a href="/miami" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Orlando, FL</h3>
+                        <p class="city-count">6 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.8 average • Verified addresses</span>
+                        </div>
+                        <a href="/orlando" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Nashville, TN</h3>
+                        <p class="city-count">3 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐</span>
+                            <span>3.2 average • Verified addresses</span>
+                        </div>
+                        <a href="/nashville" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Portland, OR</h3>
+                        <p class="city-count">4 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.9 average • Verified addresses</span>
+                        </div>
+                        <a href="/portland" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">San Diego, CA</h3>
+                        <p class="city-count">8 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.8 average • Verified addresses</span>
+                        </div>
+                        <a href="/san-diego" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Las Vegas, NV</h3>
+                        <p class="city-count">7 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.5 average • Verified addresses</span>
+                        </div>
+                        <a href="/las-vegas" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Seattle, WA</h3>
+                        <p class="city-count">9 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.7 average • Verified addresses</span>
+                        </div>
+                        <a href="/seattle" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Atlanta, GA</h3>
+                        <p class="city-count">10 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐</span>
+                            <span>4.3 average • Verified addresses</span>
+                        </div>
+                        <a href="/atlanta" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <div class="city-header">
+                        <h3 class="city-name">Minneapolis, MN</h3>
+                        <p class="city-count">6 Mobile Groomers</p>
+                    </div>
+                    <div class="city-body">
+                        <div class="city-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span>4.6 average • Verified addresses</span>
+                        </div>
+                        <a href="/minneapolis" class="city-cta">Find Groomers 🐾</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2 class="section-title">Why Choose Mobile Pet Grooming?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <span class="feature-icon">🏠</span>
+                    <h3 class="feature-title">Home Convenience</h3>
+                    <p class="feature-text">Professional grooming comes to you - no car rides or waiting rooms needed</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">😌</span>
+                    <h3 class="feature-title">Stress-Free</h3>
+                    <p class="feature-text">Your pet stays comfortable in familiar surroundings, reducing anxiety</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">⏰</span>
+                    <h3 class="feature-title">Time Saving</h3>
+                    <p class="feature-text">Flexible scheduling that works around your busy lifestyle</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💝</span>
+                    <h3 class="feature-title">Personal Attention</h3>
+                    <p class="feature-text">One-on-one care without distractions from other animals</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✨</span>
+                    <h3 class="feature-title">Full Service</h3>
+                    <p class="feature-text">Complete grooming including baths, cuts, nails, and ear cleaning</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📱</span>
+                    <h3 class="feature-title">Easy Booking</h3>
+                    <p class="feature-text">Simple online booking with same-day appointments available</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 PawGrooming. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About Us</a>
+        </div>
+        <p class="footer-copyright">Last updated: May 29, 2025</p>
+    </footer>
+</body>
+</html>
