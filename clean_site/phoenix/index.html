@@ -520,6 +520,24 @@
             text-decoration: underline;
         }
         
+        /* Desktop-specific optimizations */
+        @media (min-width: 769px) {
+            .contact-link {
+                flex: 0 1 auto;
+                min-width: 120px;
+                max-width: none;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                gap: 8px;
+            }
+            
+            .business-contact {
+                gap: 12px;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+        
         /* Mobile-specific optimizations */
         @media (max-width: 768px) {
             .businesses-grid {

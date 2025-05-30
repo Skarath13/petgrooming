@@ -1,0 +1,19 @@
+{
+  "name": "pawgrooming-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for PawGrooming static site",
+  "main": "worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "preview": "wrangler dev --remote"
+  },
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.4"
+  },
+  "devDependencies": {
+    "wrangler": "^3.78.12"
+  },
+  "author": "Dylan",
+  "license": "MIT"
+}
