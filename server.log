@@ -1,0 +1,66 @@
+127.0.0.1 - - [29/May/2025 15:34:11] "GET / HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 15:35:02] "GET / HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 15:35:02] code 404, message File not found
+192.168.1.33 - - [29/May/2025 15:35:02] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.33 - - [29/May/2025 15:35:21] "GET /princeton HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 15:35:56] "GET /privacy HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 15:36:00] "GET /contact HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 15:36:05] "GET / HTTP/1.1" 304 -
+192.168.1.33 - - [29/May/2025 15:36:07] "GET /about HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 16:06:38] "GET / HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 16:07:01] "GET /princeton HTTP/1.1" 304 -
+----------------------------------------
+Exception occurred during processing of request from ('192.168.1.37', 64163)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dylan/Desktop/pseo/dev_server.py", line 13, in __init__
+    super().__init__(*args, directory="/Users/dylan/Desktop/pseo/clean_site", **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+192.168.1.37 - - [29/May/2025 16:12:27] "GET / HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:12:28] code 404, message File not found
+192.168.1.37 - - [29/May/2025 16:12:28] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.37 - - [29/May/2025 16:19:51] "GET /princeton HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:19:51] "GET /princeton HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:05] "GET / HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:07] "GET /princeton HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:16] "GET / HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:17] "GET / HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:18] "GET /princeton HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:39] "GET / HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:39] code 404, message File not found
+192.168.1.37 - - [29/May/2025 16:22:39] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.37 - - [29/May/2025 16:22:48] "GET /austin HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:22:48] "GET /austin HTTP/1.1" 200 -
+192.168.1.33 - - [29/May/2025 16:23:04] "GET / HTTP/1.1" 304 -
+192.168.1.33 - - [29/May/2025 16:23:05] "GET /orlando HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:25:37] "GET /austin HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:26:46] "GET /austin HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:29:35] "GET /austin HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:29:55] "GET /scottsdale HTTP/1.1" 200 -
+192.168.1.37 - - [29/May/2025 16:29:55] "GET /austin HTTP/1.1" 304 -
+192.168.1.37 - - [29/May/2025 17:18:06] "GET / HTTP/1.1" 200 -
